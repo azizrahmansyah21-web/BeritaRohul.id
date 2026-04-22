@@ -16,17 +16,21 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(AuthServiceInterface::class , function($app){
-           $provider = request()->route('provider') ; 
-           switch($provider)
-           {
+            $provider = request()->route('provider') ; 
+            switch($provider)
+            {
                 case 'google' : 
                     return new GoogleAuthService() ; 
                 case 'facebook' : 
                     return new FacebookAuthService() ; 
                 default : 
                     abort(404) ; 
-           }
+            }
         }) ; 
+
+        $this->app->bind('path.public', function() {
+        return base_path();
+        });
     }
 
     /**
