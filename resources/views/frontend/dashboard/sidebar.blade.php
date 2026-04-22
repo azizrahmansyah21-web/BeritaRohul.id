@@ -4,7 +4,7 @@
         @php
             $auth_user = Auth::guard('web')->user();
         @endphp
-        <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('media/uploads/' . $auth_user->image) }}"
+        <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('uploads/users/' . $auth_user->image) }}"
             alt="User Image" class="rounded-circle mb-2" style="width: 80px; height: 80px; object-fit: cover" />
         <h5 class="mb-0" style="color: #ff6f61"><strong>{{ Auth::guard('web')->user()->name }}</strong></h5>
     </div>

@@ -165,7 +165,7 @@
             initialPreviewFileType: 'image' , 
             initialPreview: [
                 @if($site_settings->logo)
-                   "{{ asset('media/uploads/' . $site_settings->logo) }}" , 
+                   "{{ asset('uploads/settings/' . $site_settings->logo) }}" , 
                 @endif
             ], 
         });
@@ -180,7 +180,7 @@
             initialPreviewFileType: 'image' , 
             initialPreview: [
                 @if($site_settings->logo)
-                   "{{ asset('media/uploads/' . $site_settings->favicon) }}" , 
+                   "{{ asset('uploads/settings/' . $site_settings->favicon) }}" , 
                 @endif
             ], 
         });

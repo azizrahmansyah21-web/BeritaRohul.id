@@ -22,7 +22,7 @@
                             <div class="carousel-inner">
                                 @foreach ($post->images as $image)
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img src="{{ asset('media/uploads/' . $image->image) }}" class="d-block w-100 img-fluid" style="max-height: 300px; object-fit: cover;" alt="Post Image">
+                                        <img src="{{ asset('uploads/posts/' . $image->image) }}" class="d-block w-100 img-fluid" style="max-height: 300px; object-fit: cover;" alt="Post Image">
                                     </div>
                                 @endforeach
                             </div>
