@@ -23,16 +23,16 @@ class CacheServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $postCachingService = app(PostCachingService::class);
+        $postCachingService = app(PostCachingService::class);
 
-        // $latestCachedPosts = $postCachingService->cache_latest_posts();
-        // $cachedPosts = $postCachingService->cache_read_more_posts();
-        // $cached_popular_posts = $postCachingService->cache_popular_posts();
+        $latestCachedPosts = $postCachingService->cache_latest_posts();
+        $cachedPosts = $postCachingService->cache_read_more_posts();
+        $cached_popular_posts = $postCachingService->cache_popular_posts();
 
-        // View::share([
-        //     'latestCachedPosts' => $latestCachedPosts,
-        //     'cachedPosts' => $cachedPosts,
-        //     'cachedPopularPosts' => $cached_popular_posts,
-        // ]) ;
+        View::share([
+            'latestCachedPosts' => $latestCachedPosts,
+            'cachedPosts' => $cachedPosts,
+            'cachedPopularPosts' => $cached_popular_posts,
+        ]) ;
     }
 }
