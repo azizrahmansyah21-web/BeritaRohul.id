@@ -80,7 +80,7 @@
             initialPreview:[
                 @if($post->images->count() > 0)
                     @foreach ($post->images as $image)
-                        "{{ asset('storage/uploads/' . $image->image) }}",
+                        "{{ asset('media/uploads/' . $image->image) }}",
                     @endforeach
                 @endif
             ] , 

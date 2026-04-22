@@ -15,7 +15,7 @@
                     @php
                         $auth_user = Auth::guard('web')->user() ; 
                     @endphp
-                    <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('storage/uploads/' . $auth_user->image) }}" alt="User Image"
+                    <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('media/uploads/' . $auth_user->image) }}" alt="User Image"
                         class="profile-img rounded-circle" style="width: 100px; height: 100px;" />
                     <span class="username">{{ Auth::guard('web')->user()->name }}</span>
                 </div>
@@ -78,7 +78,7 @@
                            @forelse ($posts as $post)
                                 <div class="post-item mb-4 p-3 border rounded">
                                     <div class="post-header d-flex align-items-center mb-2">
-                                        <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('storage/uploads/' . $auth_user->image) }}" alt="User Image" class="rounded-circle"
+                                        <img src="{{ $auth_user->provider_id ? $auth_user->image : asset('media/uploads/' . $auth_user->image) }}" alt="User Image" class="rounded-circle"
                                             style="width: 50px; height: 50px;" />
                                         <div class="ms-3">
                                             <h5 class="mb-0">{{ $auth_user->name }}</h5>
@@ -96,7 +96,7 @@
                                         <div class="carousel-inner">
                                             @foreach($post->images as $image)
                                                 <div class="carousel-item @if($loop->index == 0) active @endif" >
-                                                    <img src="{{ asset('storage/uploads/' . $image->image) }}" class="d-block w-100"
+                                                    <img src="{{ asset('media/uploads/' . $image->image) }}" class="d-block w-100"
                                                         alt="First Slide">
                                                     <div class="carousel-caption d-none d-md-block">
                                                         <h5>{{ $post->title }}</h5>
