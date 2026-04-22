@@ -151,7 +151,7 @@
                     success: function(response) {
                         if (response.status == 200) {
                             const user = response.data;
-                            const imageUrlBasePath = 'http://news-portal.test/storage/uploads/';
+                            const imageUrlBasePath = '{{ asset('uploads') }}/';
                             $('#showUserInfoModal_' + id + ' .modal-title').text("Info About User : " +
                                 user.name);
                             $('#insert_user_info_' + id).empty();

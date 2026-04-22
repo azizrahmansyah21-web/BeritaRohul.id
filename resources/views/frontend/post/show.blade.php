@@ -198,7 +198,7 @@
 
 @push('js')
     <script>
-    const imageUrl = 'http://news-portal.net/storage/uploads/'; 
+    const imageUrl = '{{ asset('uploads') }}/'; 
     $(document).ready(function() {
         // Toggle dropdown on settings button click
         $(document).on('click', '.settings-btn', function(e) {

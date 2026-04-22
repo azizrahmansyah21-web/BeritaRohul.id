@@ -45,10 +45,17 @@ return [
         ],
         'uploads' => [
             'driver' => 'local',
-            'root' => storage_path('uploads/'),
-            'url' => env('APP_URL') . '/storage/uploads',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL') . '/uploads',
             'visibility' => 'public',
             'throw' => true,
+        ],
+        'assets-front' => [
+            'driver' => 'local',
+            'root' => env('ASSETS_FRONT_PATH', public_path('assets-front')),
+            'url' => env('APP_URL') . '/assets-front',
+            'visibility' => 'public',
+            'throw' => false,
         ],
         's3' => [
             'driver' => 's3',

@@ -103,7 +103,7 @@
                             month: 'long',
                             day: 'numeric',
                         });
-                        const imageUrl = 'http://news-portal.net/storage/uploads/'  + comment.user.image ; 
+                        const imageUrl = '{{ asset('uploads') }}/'  + comment.user.image ; 
                         $("#displayComments_" + post_slug).append(`
                             <div class="comment" style="display: flex; align-items: flex-start; margin-bottom: 15px;">
                                 <img src="${imageUrl}" alt="User Image" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; margin-right: 10px;" />

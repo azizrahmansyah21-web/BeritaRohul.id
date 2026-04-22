@@ -37,12 +37,12 @@ class SettingController extends Controller
                 return redirect()->route('admin.settings.index');
             }
             if ($request->hasFile('logo')) {
-                ImageManager::customDeleteImage($site_setting, 'logo', 'uploads');
-                ImageManager::customeUploadImage($request, $site_setting, 'logo', 'logo', 'settings', 'uploads');
+                ImageManager::customDeleteImage($site_setting, 'logo', 'assets-front');
+                ImageManager::customeUploadImage($request, $site_setting, 'logo', 'logo', 'settings', 'assets-front');
             }
             if ($request->hasFile('favicon')) {
-                ImageManager::customDeleteImage($site_setting, 'favicon', 'uploads');
-                ImageManager::customeUploadImage($request, $site_setting, 'favicon', 'favicon', 'settings', 'uploads');
+                ImageManager::customDeleteImage($site_setting, 'favicon', 'assets-front');
+                ImageManager::customeUploadImage($request, $site_setting, 'favicon', 'favicon', 'settings', 'assets-front');
             }
             DB::commit();
             display_success_message('Setting Updated Successfully!');
