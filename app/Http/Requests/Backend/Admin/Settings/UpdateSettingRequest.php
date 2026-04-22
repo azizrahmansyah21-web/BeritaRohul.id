@@ -23,8 +23,8 @@ class UpdateSettingRequest extends FormRequest
     {
         return [
             'site_name' => ['required' , 'string' , 'min:3' , 'max:60'], 
-            'phone'=>  ['required' , 'phone:Auto'] , 
-            'email' => ['required' , 'string' , 'email' , 'lowercase' , 'min:20' , 'max:50'] , 
+            'phone'=>  ['required', 'regex:/^(\+62|62|0)8[1-9][0-9]{6,10}$/'] , 
+            'email' => ['required', 'string', 'email', 'lowercase', 'min:5', 'max:50'] , 
             'small_description'=> ['nullable' , 'string' , 'min:50' , 'max:1000'] ,
             'country' => ['required' , 'string' , 'min:3' , 'max:25'],
             'city' =>  ['required' , 'string' , 'min:3' , 'max:25'] , 
@@ -36,5 +36,16 @@ class UpdateSettingRequest extends FormRequest
             "logo" => ['required' , 'image' , 'mimes:png,jpg,jpeg,webp' , 'max:2048'], 
             "favicon" => ['required' , 'image' , 'mimes:png,jpg,jpeg,webp' , 'max:2048'], 
         ] ; 
+    }
+
+    public function messages(): array
+    {
+        return [
+            'phone.required' => 'Nomor telepon wajib diisi, men!',
+            'phone.regex'    => 'Format nomor tidak valid (Contoh: 08123456789 atau +628123456789).',
+            'email.min'      => 'Email minimal 5 karakter lah ya.',
+            'logo.image'     => 'File harus berupa gambar.',
+            'favicon.image'  => 'File harus berupa gambar.',
+        ];
     }
 }
